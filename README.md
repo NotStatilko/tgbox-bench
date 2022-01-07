@@ -1,6 +1,6 @@
 # TGBOX Benchmark
 
-This script will benchmark **upload speed** to TGBOX storage.
+This script will benchmark **upload speed** to [**TGBOX**](https://github.com/NonProjects/tgbox) storage.
 
 ## Build
 

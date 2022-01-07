@@ -12,7 +12,7 @@ cd tgbox-bench & python3 -m pip install -r requirements.txt
 ```
 ### If you're on Windows
 
-Simplest way is download executable from [**TGBOX Telegram channel**](https://t.me/nontgbox),
+Simplest way is download executable from [**TGBOX Telegram channel**](https://t.me/nontgbox/8),
 but you can build by yourself, see **Linux guide**.
 
 ## Report

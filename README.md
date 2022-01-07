@@ -1,6 +1,6 @@
 # TGBOX Benchmark
 
-This script will benchmark upload speed to TGBOX storage.
+This script will benchmark **upload speed** to TGBOX storage.
 
 ## Build
 
@@ -8,7 +8,7 @@ This script will benchmark upload speed to TGBOX storage.
 ```
 git clone https://github.com/NotStatilko/tgbox-bench
 cd tgbox-bench & python3 -m pip install -r requirements.txt
-./bench.py # Run benchmark
+./bench.py # Run benchmark, close all network apps before this
 ```
 ### If you're on Windows
 
@@ -19,5 +19,5 @@ but you can build by yourself, see **Linux guide**.
 
 Please, send your results to me, they are **anonymized**, thank you.
 
-* **Telegram**: https://t.me/not\_statilko
+* **Telegram**: https://t.me/not_statilko
 * **Email**: thenonproton@pm.me (ProtonMail)

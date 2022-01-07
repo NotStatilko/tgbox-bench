@@ -1,0 +1,3 @@
+speedtest-cli==2.1.3
+tgbox==0.3.2
+psutil==5.9.0

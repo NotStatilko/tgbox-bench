@@ -72,7 +72,9 @@ try:
     basekey = tgbox.keys.BaseKey(urandom(32))
     tgbox_name = 'benchTGBOX_' + str(int(time()))
 
-    erb = sync(tgbox.api.make_remote_box(ta, tgbox_name))
+    erb = sync(tgbox.api.make_remote_box(
+        ta, tgbox_name, 'tgbox_logo.png'
+    ))
     dlb = sync(tgbox.api.make_local_box(erb, ta, basekey))
     drb = sync(erb.decrypt(dlb=dlb))
     
@@ -127,5 +129,5 @@ try:
     input('\n@ Press Ctrl+C to exit ')
 
 except Exception as e:
-    print(f'E: Oops! Error founded. {e}')
+    print(f'\nE: Oops! Error founded. {e}')
     input('\n@ Press Ctrl+C to exit ')

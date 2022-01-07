@@ -90,7 +90,8 @@ try:
     rbf = sync(drb.push_file(ff, progress_callback))
     
     total_time = time() - start_time
-    
+    del pseudo_file
+
     print('\n\nGood! Logging out...')
     sync(ta.log_out())
     

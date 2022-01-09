@@ -72,9 +72,7 @@ try:
     basekey = tgbox.keys.BaseKey(urandom(32))
     tgbox_name = 'benchTGBOX_' + str(int(time()))
 
-    erb = sync(tgbox.api.make_remote_box(
-        ta, tgbox_name, 'tgbox_logo.png'
-    ))
+    erb = sync(tgbox.api.make_remote_box(ta, tgbox_name, None))
     dlb = sync(tgbox.api.make_local_box(erb, ta, basekey))
     drb = sync(erb.decrypt(dlb=dlb))
     
@@ -82,7 +80,8 @@ try:
     pseudo_file = BytesIO()
 
     for _ in range(10):
-        pseudo_file.write(bytearray(100000000))
+        #pseudo_file.write(bytearray(100000000))
+        pseudo_file.write(bytearray(1000))
     
     print('@ Prepare and upload file...\r', end='')
     
@@ -95,10 +94,12 @@ try:
     del pseudo_file
 
     print('\n\nGood! Logging out...')
-    sync(ta.log_out())
+    sync(drb.delete()) # Delete RemoteBox Channel
+    sync(ta.log_out()) # Log-out from TelegramAccount
+    dlb.delete() # Delete LocalBox database
     
     tgbox_upload = round(((1e+9 / total_time) * 8) / 1024**2, 1)
-    cpu = processor() if processor() else 'UNKNOWN'
+    cpu = processor() if processor() else 'N/A'
 
     print(
         '\n'*100 + '''-- RESULTS ----------------------------------\n'''
@@ -122,9 +123,6 @@ try:
         '''@ Thank you very much for testing this!\n'''
         '''  Please, make a screenshot and send it to the author.\n'''
         '''  Email: thenonproton@pm.me, Telegram: @not_statilko\n'''
-
-        '''\n! You can leave now RemoteBox Channel from your\n'''
-        '''  Telegram account and remove LocalBox file (benchTGBOX).'''
     )
     input('\n@ Press Ctrl+C to exit ')
 

@@ -80,8 +80,7 @@ try:
     pseudo_file = BytesIO()
 
     for _ in range(10):
-        #pseudo_file.write(bytearray(100000000))
-        pseudo_file.write(bytearray(1000))
+        pseudo_file.write(bytearray(100000000))
     
     print('@ Prepare and upload file...\r', end='')
     
